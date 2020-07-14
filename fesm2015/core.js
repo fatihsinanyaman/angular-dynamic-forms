@@ -1,4 +1,4 @@
-import { QueryList, ElementRef, Renderer2, Input, Directive, TemplateRef, ɵlooseIdentical, InjectionToken, Optional, Inject, ɵɵdefineInjectable, ɵɵinject, Injectable, Injector, INJECTOR, NgModule } from '@angular/core';
+import { QueryList, ElementRef, Renderer2, Input, Directive, TemplateRef, InjectionToken, Optional, Inject, ɵɵdefineInjectable, ɵɵinject, Injectable, Injector, INJECTOR, NgModule } from '@angular/core';
 import { __decorate, __metadata, __param } from 'tslib';
 import { BehaviorSubject, isObservable, of, merge } from 'rxjs';
 import 'reflect-metadata';
@@ -1336,7 +1336,7 @@ class DynamicSelectModel extends DynamicOptionControlModel {
         var _a, _b, _c;
         super(config, layout);
         this.type = DYNAMIC_FORM_CONTROL_TYPE_SELECT;
-        this.compareWithFn = isFunction(config.compareWithFn) ? config.compareWithFn : ɵlooseIdentical;
+        this.compareWithFn = isFunction(config.compareWithFn) ? config.compareWithFn : null;
         this.filterable = isBoolean(config.filterable) ? config.filterable : false;
         this.multiple = isBoolean(config.multiple) ? config.multiple : false;
         this.placeholder = (_a = config.placeholder) !== null && _a !== void 0 ? _a : "";
