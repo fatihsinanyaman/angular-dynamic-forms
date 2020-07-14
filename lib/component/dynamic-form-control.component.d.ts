@@ -1,0 +1,35 @@
+import { EventEmitter } from "@angular/core";
+import { AbstractControl, FormGroup } from "@angular/forms";
+import { DynamicFormControl } from "./dynamic-form-control-interface";
+import { DynamicFormControlCustomEvent } from "./dynamic-form-control-event";
+import { DynamicFormControlModel } from "../model/dynamic-form-control.model";
+import { DynamicFormControlLayout, DynamicFormControlLayoutContext, DynamicFormControlLayoutPlace } from "../model/misc/dynamic-form-control-layout.model";
+import { DynamicFormValidationService } from "../service/dynamic-form-validation.service";
+import { DynamicFormLayout, DynamicFormLayoutService, DynamicFormControlTemplates } from "../service/dynamic-form-layout.service";
+export declare abstract class DynamicFormControlComponent implements DynamicFormControl {
+    protected layoutService: DynamicFormLayoutService;
+    protected validationService: DynamicFormValidationService;
+    private _hasFocus;
+    formLayout: DynamicFormLayout;
+    group: FormGroup;
+    layout: DynamicFormControlLayout;
+    model: DynamicFormControlModel;
+    templates: DynamicFormControlTemplates;
+    blur: EventEmitter<any>;
+    change: EventEmitter<any>;
+    customEvent: EventEmitter<DynamicFormControlCustomEvent>;
+    focus: EventEmitter<any>;
+    protected constructor(layoutService: DynamicFormLayoutService, validationService: DynamicFormValidationService);
+    get control(): AbstractControl | never;
+    get id(): string;
+    get hasFocus(): boolean;
+    get isInvalid(): boolean;
+    get isValid(): boolean;
+    get errorMessages(): string[];
+    get showErrorMessages(): boolean;
+    getClass(context: DynamicFormControlLayoutContext, place: DynamicFormControlLayoutPlace, model?: DynamicFormControlModel): string;
+    onBlur($event: any): void;
+    onChange($event: any): void;
+    onCustomEvent($event: any, type?: string | null, bypass?: boolean): void;
+    onFocus($event: any): void;
+}
