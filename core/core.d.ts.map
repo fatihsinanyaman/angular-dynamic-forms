@@ -1,1 +1,0 @@
-{"version":3,"file":"core.d.ts","sources":["core.d.ts"],"names":[],"mappings":"AAAA","sourcesContent":["/**\n * Generated bundle index. Do not edit.\n */\nexport * from './public-api';\n"]}
