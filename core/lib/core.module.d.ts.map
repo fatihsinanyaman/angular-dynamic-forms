@@ -1,0 +1,1 @@
+{"version":3,"file":"core.module.d.ts","sources":["core.module.d.ts"],"names":[],"mappings":"AAAA;;;;;;AACA;;;;AAEA","sourcesContent":["import { ModuleWithProviders } from \"@angular/core\";\nexport declare class DynamicFormsCoreModule {\n    static forRoot(): ModuleWithProviders<DynamicFormsCoreModule>;\n}\n"]}
